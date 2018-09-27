@@ -13,14 +13,14 @@ if(!$_SESSION['email'])
 <head>
 
     <title>
-        Registration
+        DashBoard
     </title>
 </head>
 
 <body>
 <h1>Welcome</h1><br>
 <?php
-echo $_SESSION['email'];
+echo $_SESSION['Name'];
 ?>
 
 

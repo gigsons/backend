@@ -22,7 +22,7 @@
 
 <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->
 
-
+<a href="admin_logout.php">Logout</a></li>
     <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">
         <thead>
 
@@ -30,8 +30,12 @@
 
             <th>User Id</th>
             <th>User Name</th>
+            <th> Full Name</th>
+            <th> Account Number</th>
+            <th> Bank Name</th>
             <th>User E-mail</th>
             <th>User Pass</th>
+            <th>status</th>
             <th>Delete User</th>
         </tr>
         </thead>
@@ -43,10 +47,14 @@
 
         while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.
         {
-            $user_id=$row[0];
-            $user_name=$row[1];
-            $user_email=$row[2];
-            $user_pass=$row[3];
+            $UserID=$row[0];
+            $DisplayName=$row[5];
+            $Name=$row[1];
+            $AccountNumber=$row[6];
+            $BankName=$row[7];
+            $UserEmail=$row[3];
+            $Password=$row[2];
+            $ActivationStatus=$row[8];
 
 
 
@@ -54,11 +62,15 @@
 
         <tr>
 <!--here showing results in the table -->
-            <td><?php echo $user_id;  ?></td>
-            <td><?php echo $user_name;  ?></td>
-            <td><?php echo $user_email;  ?></td>
-            <td><?php echo $user_pass;  ?></td>
-            <td><a href="delete.php?del=<?php echo $user_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->
+            <td><?php echo $UserID;  ?></td>
+            <td><?php echo $DisplayName;  ?></td>
+            <td><?php echo $Name;  ?></td>
+            <td><?php echo $AccountNumber;  ?></td>
+            <td><?php echo $BankName;  ?></td>
+            <td><?php echo $UserEmail;  ?></td>
+            <td><?php echo $Password;  ?></td>
+            <td><?php echo $ActivationStatus; ?></td>
+            <td><a href="delete.php?del=<?php echo $UserID ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->
         </tr>
 
         <?php } ?>
